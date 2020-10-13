@@ -1,0 +1,46 @@
+commands used to complete task 1
+
+A) To create key-pair:
+
+1. aws ec2 help
+2. aws ec2 help | grep key
+3. aws ec2 create-key-pair help
+
+Final command: aws ec2 create-key-pair --key-name <name_of_the_key>
+output of the command: it returns "Key Fingerprint, keyMaterial". Key Material has the private key which we can save in .pem format. It is used to connect to the instance using ssh protocol.
+
+B) To create Security-Group:
+
+1. aws ec2 help | grep security
+2. aws ec2 create-security-group help
+
+Final command: aws ec2 create-security-group --group-name <name> --description <description of the group>
+output of the command: it returns a JSON ouput whcih has security group id
+
+For creating rules we have to use "authroize-security-group-ingress" subcommand.
+
+C) To launch EC2 Instance:
+
+1. aws ec2 help | grep instances
+2. aws ec2 run-instances help
+
+Final command: aws ec2 run-instances --image-id <ami-id> --instance-type <t2.micro> --key-name <key> --security-group-ids <id of security group> --count <no. of instance to launch>
+output of the command: it will give the complete description of the instance like instanceID, imageID, availability zone, private ip, etc. In this command the state of instance is "pending".
+
+public ip will be given once the instance is in running state.
+
+D) Create EBS Volume:
+
+1. aws ec2 help | grep volume
+2. aws ec2 create-volume help
+
+Final command: aws ec2 create-volume --size <size of ebs volume> --availability-zone <same zone name as of instance to whicch it has to be attach>
+output of the command: it returns abailabitlity zone in which ebs volume is created, create time, size, snapshotid, state, volumeid etc
+
+E) Attach EBS volume to instance:
+
+1. aws ec2 help | grep volume
+2. aws ec2 attach-volume help
+
+Final Command: aws ec2 attach-volume --volume-id <volume id> --instance-id <to which it has to be attach> --device <name of the volume>
+output of the command: it returns attach time, device name, instance id, state, volume id.
