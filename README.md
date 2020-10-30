@@ -1,8 +1,8 @@
-#AWS CSA + Developers Training
+# AWS CSA + Developers Training
 **All the tasks are described here with the Task Number**
 
-##Task 1
-###Description: Launch EC2 instance using AWS cli. For this instance create 
+## Task 1
+### Description: Launch EC2 instance using AWS cli. For this instance create 
 1. key-pair
 2. Security Group
 3. Launch  the EC2 instance
@@ -11,8 +11,8 @@
 
 Task command are given inside the text file in task directory
 
-##Task 2
-###Description: Create CDN for the data. For this create
+## Task 2
+### Description: Create CDN for the data. For this create
 1. create a new security group which allow http and https request
 2. EC2 Instance
 3. Create a external volume (persistent volume).
